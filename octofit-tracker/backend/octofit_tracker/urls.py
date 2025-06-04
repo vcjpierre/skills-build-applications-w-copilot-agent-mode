@@ -30,12 +30,13 @@ router.register(r'workouts', views.WorkoutViewSet)
 
 @api_view(['GET'])
 def api_root(request, format=None):
+    codespace_url = "https://vigilant-rotary-phone-r4xxxw979g6f4pv-8000.app.github.dev"
     return Response({
-        'users': '/users/',
-        'teams': '/teams/',
-        'activity': '/activity/',
-        'leaderboard': '/leaderboard/',
-        'workouts': '/workouts/',
+        'users': f'{codespace_url}/api/users/',
+        'teams': f'{codespace_url}/api/teams/',
+        'activity': f'{codespace_url}/api/activity/',
+        'leaderboard': f'{codespace_url}/api/leaderboard/',
+        'workouts': f'{codespace_url}/api/workouts/',
     })
 
 urlpatterns = [
